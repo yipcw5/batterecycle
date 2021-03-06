@@ -16,13 +16,13 @@ body {
 }
 
 a {
-  color: #080808;
+  color: #2e2b2b;
   text-decoration: none;
   transition: 0.5s;
 }
 
 a:hover, a:active, a:focus {
-  color: #032c0b;
+  color: #080808;
   outline: none;
   text-decoration: none;
 }
