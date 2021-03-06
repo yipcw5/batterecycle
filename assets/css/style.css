@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   font-family: "Montserrat", sans-serif;
-  color: rgba(255, 255, 255, 0.8);
+  color: #319640;
   font-size: 15px;
   padding: 0 2px;
   white-space: nowrap;
@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a:hover, .navbar .active, .navbar li:hover > a {
-  color: #fff;
+  color: #319640;
 }
 
 .navbar .dropdown ul {
@@ -407,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero p {
-  color: #fff;
+  color: #319620;
   margin-bottom: 20px;
   padding: 0 15px;
   font-size: 24px;
