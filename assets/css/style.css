@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header #logo h1 a, #header #logo h1 a:hover {
-  color:#319640;
+  color:#fff;
 }
 
 @media (max-width: 768px) {
