@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
-  background: linear-gradient(45deg, #1de099, #1dc8cd);
+  background: linear-gradient(45deg, #319640, #319640);
   color: #fff;
   border-radius: 4px 4px 0 0;
   right: 15px;
@@ -62,13 +62,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:focus {
-  background: linear-gradient(45deg, #1de099, #1dc8cd);
-  color: #fff;
+  background: linear-gradient(45deg, #fff, #fff);
+  color: #319640;
   outline: none;
 }
 
 .back-to-top:hover {
-  background: #1dc8cd;
+  background: #319640;
   color: #fff;
 }
 
@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(45deg, #319640, #319640), url("../img/hero-bg.jpg") center top no-repeat;
+  background: linear-gradient(45deg, #319640, #319640);
   background-size: cover;
   position: relative;
 }
