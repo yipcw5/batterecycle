@@ -92,9 +92,10 @@
     }
 
     function reset_pin(){
+      document.getElementById("description").innerHTML = "No map point defined yet.";
       previous_pin=initMap();
       previous_pin.setMap(null);
-      document.getElementById("description").innerHTML = "No map point defined yet.";
+      
     }
   </script>
 
