@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 90px;
   transition: all 0.5s;
   z-index: 997;
-  background: linear-gradient(45deg, #1de099, #1dc8cd);
+  background: linear-gradient(45deg, #165f0c, #26a116);
 }
 
 #header.header-transparent {
@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled {
-  background: linear-gradient(45deg, #1de099, #1dc8cd);
+  background: linear-gradient(45deg, #165f0c, #26a116);
   height: 70px;
   transition: all 0.5s;
 }
@@ -221,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #1dc8cd;
+  color: #26a116; 
 }
 
 .navbar .dropdown:hover > ul {
