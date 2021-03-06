@@ -15,19 +15,48 @@
   </style>
   <script>
     // Initialize and add the map
+    // Locations obtained from https://www.rbkc.gov.uk/bins-and-recycling/rubbish-and-recycling/recycling/z-recycling
+    // Latitudes and longitudes calculated using https://www.gps-coordinates.net/
     function initMap() {
-      // The location of Uluru
-      const uluru = { lat: -25.344, lng: 131.036 };
-      // The map, centered at Uluru
+      // The locations
+
+      var locations=new Array();
+      locations[0]={lat: 51.4874538, lng: -0.1682689, name: "Chelsea Library", address:"Chelsea Old Town Hall, King’s Road, London SW3 5EZ"};
+      locations[1]={lat:51.50125503540039,lng:-0.19409260153770447,name: "Kensington Central Library", address: "12 Phillimore Walk, London W8 7RX"};
+      locations[2]={lat:51.516624450683594,lng:-0.2094385027885437,name:"North Kensington Library",address:"108 Ladbroke Grove, London W11 1PZ"};
+      locations[3]={lat:51.490272521972656,lng:-0.1871299147605896,name:"Brompton Library",address:"210 Old Brompton Road, London SW5 0BS"};
+      locations[4]={lat:51.511495,lng:-0.1971225,name:"Notting Hill Gate Library",address:"1 Pembridge Square, London W2 4EW"};
+      locations[5]={lat:51.52357864379883,lng:0.20658299326896667,name:"Kensal Rise Library",address:"20 Golborne Road, London W10 5PF"};
+      locations[6]={lat:51.495323181152344,lng:-0.1981716901063919,name:"Council Offices",address:"37 Pembroke Road, London W8 6PW"};
+      locations[7]={lat:51.518253326416016,lng:-0.20629289746284485,name:"Market Office",address:"72 Tavistock Road, London W11 1AN"};
+      locations[8]={lat:51.462526,lng:-0.191378,name:"Smugglers Way Household Waste and Recycling Centre",address:"Smugglers Way, London SW18 1JS"};
+
+      // The map, centered at Chelsea Library
       const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: uluru,
+        zoom: 10,
+        center: locations[0],
       });
-      // The marker, positioned at Uluru
-      const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-      });
+      var markers=[];
+      // The marker, positioned at each location specified
+      for (var i=0;i<locations.length;i++) {
+        var coords=new google.maps.LatLng(locations[i].lat, locations[i].lng);
+        markers[i] = new google.maps.Marker({
+          position: coords,
+          map: map,
+          //icon: 'images/locred.png',
+          description: locations[i].address,
+          id: i
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+            content: locations[i].name
+        });
+
+        infowindow.open(map, markers[i]);
+        google.maps.event.addListener(markers[i], 'click', function () {
+            alert(markers[this.id].address)
+        })
+      }
     }
   </script>
   
@@ -132,7 +161,7 @@
           <br><br>
           Select a specific type of battery in the dropdown to filter for recycling sites that accommodate it.
         </p>
-        <h3>My Google Maps Demo</h3>
+        <h3>Map locations</h3>
         <!--The div element for the map -->
         <div id="map"></div>
     
