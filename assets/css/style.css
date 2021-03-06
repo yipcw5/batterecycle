@@ -9,14 +9,14 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background: #fff;
+  background: #44A758;
   color: #666666;
   font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
 }
 
 a {
-  color: #44A758;
+  color: #1dc8cd;
   text-decoration: none;
   transition: 0.5s;
 }
