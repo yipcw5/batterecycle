@@ -82,7 +82,7 @@
             var d = R * c;
             distances[i] = d;
             if ( closest == -1 || d < distances[closest] ) {
-                closest = i;   
+                closest = i;
             }
         }
         d=Math.round(d*1000)/1000;
@@ -95,7 +95,7 @@
       document.getElementById("description").innerHTML = "No map point defined yet.";
       previous_pin=initMap();
       previous_pin.setMap(null);
-      
+
     }
   </script>
 
@@ -107,8 +107,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/ICL.jpg" rel="icon">
+  <link href="assets/img/ICL.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -200,7 +200,7 @@
         <button onclick="reset_pin()">Reset</button>
         <br><br>
         <p id="description">No map point defined yet.</p>
-        
+
       </div>
     </section>
 
