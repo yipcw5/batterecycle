@@ -93,6 +93,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
 }
 
+#header.header-scrolled a, #header #header.header-scrolled h1 a:hover {
+  color: #fff
+}
+
 #header #logo h1 {
   font-size: 36px;
   padding: 0;
@@ -407,7 +411,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero p {
-  color: #319620;
+  color: #fff;
   margin-bottom: 20px;
   padding: 0 15px;
   font-size: 24px;
