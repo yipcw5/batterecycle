@@ -521,8 +521,8 @@ section {
   display: block;
   width: 60px;
   height: 3px;
-  background: #1dc8cd;
-  background: linear-gradient(0deg, #1dc8cd 0%, #55fabe 100%);
+  background: #44A758;
+  background: linear-gradient(0deg, #44A758 0%, #44A758 100%);
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -644,7 +644,7 @@ section {
 #about .content i {
   font-size: 20px;
   padding-right: 4px;
-  color: #1dc8cd;
+  color: #44A758;
 }
 
 #about .content ul {
