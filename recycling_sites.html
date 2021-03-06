@@ -31,7 +31,7 @@
       locations[7]={lat:51.518253326416016,lng:-0.20629289746284485,name:"Market Office",address:"72 Tavistock Road, London W11 1AN"};
       locations[8]={lat:51.462526,lng:-0.191378,name:"Smugglers Way Household Waste and Recycling Centre",address:"Smugglers Way, London SW18 1JS"};
 
-      // The map, centered at Chelsea Library
+      // The map, centered at Kensington Central Library
       const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
         center: locations[1],
@@ -43,7 +43,6 @@
         markers[i] = new google.maps.Marker({
           position: coords,
           map: map,
-          //icon: 'images/locred.png',
           description: locations[i].address,
           id: i
         });
@@ -58,7 +57,7 @@
         })
       }
       google.maps.event.addListener(map, 'click', function (event) {
-        new google.maps.Marker({
+        var last=new google.maps.Marker({
             position: event.latLng,
             map: map,
         });
@@ -83,13 +82,19 @@
             var d = R * c;
             distances[i] = d;
             if ( closest == -1 || d < distances[closest] ) {
-                closest = i;
+                closest = i;   
             }
         }
-        alert(locations[closest].name);
-        
-
+        d=Math.round(d*1000)/1000;
+        document.getElementById("description").innerHTML = "Your nearest recycling site is <strong>"+locations[closest].name+"</strong>, which is <strong>"+d+" km</strong> away.<br> The address is: "+locations[closest].address;
+        return previous_pin;
       });
+    }
+
+    function reset_pin(){
+      previous_pin=initMap();
+      previous_pin.setMap(null);
+      document.getElementById("description").innerHTML = "No map point defined yet.";
     }
   </script>
   
@@ -176,13 +181,12 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          Here you can view locations of battery recycling sites. 
+          Here you can view locations of battery recycling sites. Currently this is restricted to the borough of Kensington and Chelsea only. Locations were obtained from: https://www.rbkc.gov.uk/bins-and-recycling/rubbish-and-recycling/recycling/z-recycling
           <br><br>
-          By clicking on "Add my location", you may include your current location on the map, and view your nearest recycling site.
+          Click anywhere on the map to view the nearest recycling site from that place. Remember to click "reset" if you'd like to remove a dropped pin.
           <br><br>
-          Select a specific type of battery in the dropdown to filter for recycling sites that accommodate it.
+          Possible future iteration: filter recycling sites based on specific batteries they recycle.
         </p>
-        <h3>Map locations</h3>
         <!--The div element for the map -->
         <div id="map"></div>
     
@@ -191,6 +195,11 @@
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0PFBGwygpsnMXRtFTgMlmR6zb7AUx1LY&callback=initMap&libraries=&v=weekly"
           async
         ></script>
+        <br><br>
+        <button onclick="reset_pin()">Reset</button>
+        <br><br>
+        <p id="description">No map point defined yet.</p>
+        
       </div>
     </section>
 
