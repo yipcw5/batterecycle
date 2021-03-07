@@ -47,13 +47,12 @@
           id: i
         });
 
-        var infowindow = new google.maps.InfoWindow({
-            content: locations[i].name
-        });
-
-        infowindow.open(map, markers[i]);
         google.maps.event.addListener(markers[i], 'click', function () {
-            alert(locations[this.id].name+" is located at "+locations[this.id].address)
+          alert(locations[this.id].name+" is located at "+locations[this.id].address);
+          var infowindow = new google.maps.InfoWindow({
+            content: locations[this.id].name
+          });
+          infowindow.open(map, markers[this.id]);
         })
       }
       google.maps.event.addListener(map, 'click', function (event) {
