@@ -42,6 +42,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 175px;
   margin-left: 175px;
 }
+
+.left-align {
+  margin-right: 175px;
+  margin-left: 175px;
+  text-align: left;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
