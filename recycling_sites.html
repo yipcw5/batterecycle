@@ -64,7 +64,7 @@
           return x*Math.PI/180;
         }
 
-        //calculate straight-line distance and output nearest recycling site
+        //calculate straight-line distance and output nearest recycling site. Credits to stackoverflow!
         var lat = event.latLng.lat();
         var lng = event.latLng.lng();
         var R = 6371; // radius of earth in km
@@ -86,6 +86,12 @@
         }
         d=Math.round(d*1000)/1000;
         document.getElementById("description").innerHTML = "Your nearest recycling site is <strong>"+locations[closest].name+"</strong>, which is <strong>"+d+" km</strong> away.<br> The address is: "+locations[closest].address;
+        
+
+        var infowindow = new google.maps.InfoWindow({
+          content: locations[closest].name
+        });
+        infowindow.open(map, markers[closest]);
         return previous_pin;
       });
     }
