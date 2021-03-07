@@ -53,7 +53,7 @@
 
         infowindow.open(map, markers[i]);
         google.maps.event.addListener(markers[i], 'click', function () {
-            alert(markers[this.id].address)
+            alert(locations[this.id].name+" is located at "+locations[this.id].address)
         })
       }
       google.maps.event.addListener(map, 'click', function (event) {
